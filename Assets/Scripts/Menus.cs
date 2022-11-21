@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class Menus : MonoBehaviour
 {
     [SerializeField] bool settings;
     [SerializeField] bool Pause;
-    [SerializeField] GameObject SettingsMenu;
+    [SerializeField] GameObject SettingsMenu, settingsFirstButton, settingsClosedButton;
     [SerializeField] GameObject PauseMenu;
     public void PlayGame()
     {
@@ -22,26 +23,7 @@ public class Menus : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetButtonDown("Cancel"))
-        {
-            Application.Quit();
-        }
-        if (Input.GetButtonDown("Submit"))
-        {
-            PlayGame();
-        }
-        if (Input.GetButtonDown("Settings"))
-        {
-            Settings();
-        }
-        if (Input.GetButtonDown("Pause"))
-        {
-            Pauses();
-        }
-        if (Input.GetButtonDown("Submit") && Pause == true)
-        {
-            RetryLevel();
-        }
+        
     }
     public void ExitGame()
     {
@@ -49,22 +31,20 @@ public class Menus : MonoBehaviour
         Debug.Log("Quit!");
     }
 
-    public void Settings()
+    public void OpenSettings()
     {
-        if (settings == false)
-        {
-            SettingsMenu.SetActive(true);
-            settings = true;
-        }
-        else
-        {
-            SettingsMenu.SetActive(false);
-            settings = false;
-        }
+        PauseMenu.SetActive(false);
+        SettingsMenu.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(settingsFirstButton);
     }
-    public void SettingsInactive()
+
+    public void CloseSettings()
     {
         SettingsMenu.SetActive(false);
+        PauseMenu.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(settingsClosedButton);
     }
 
     public void RetryLevel()

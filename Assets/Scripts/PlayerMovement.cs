@@ -14,7 +14,11 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask groundMask;
 
     private Vector3 velocity;
-    private bool isGrounded, gameOver;
+    private bool isGrounded;
+
+    public bool gameOver, victory;
+
+    [SerializeField]private GameObject GOverMenu;
     
     void Start()
     {
@@ -53,6 +57,8 @@ public class PlayerMovement : MonoBehaviour
         if (col.gameObject.tag == ("Victory"))
         {
             gameOver = true;
+            victory = true;
+            GOverMenu.SetActive(true);
             Time.timeScale = 0;
             Debug.Log("You win");
         }
@@ -61,6 +67,8 @@ public class PlayerMovement : MonoBehaviour
     public void Loss()
     {
         gameOver = true;
+        victory = false;
+        GOverMenu.SetActive(true);
         Time.timeScale = 0;
         Debug.Log("You lose");
     }
