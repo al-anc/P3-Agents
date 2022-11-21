@@ -14,9 +14,13 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask groundMask;
 
     private Vector3 velocity;
-    private bool isGrounded;
+    private bool isGrounded, gameOver;
     
-
+    void Start()
+    {
+        Time.timeScale = 1;
+    }
+    
     // Update is called once per frame
     void Update()
     {
@@ -37,5 +41,14 @@ public class PlayerMovement : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
 
         controller.Move(velocity * Time.deltaTime);
+    }
+
+    void OnTriggerEnter(Collider col)
+    {
+        if (col.gameObject.tag == ("Victory"))
+        {
+            gameOver = true;
+            Time.timeScale = 0;
+        }
     }
 }
