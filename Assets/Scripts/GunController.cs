@@ -15,7 +15,7 @@ public class GunController : MonoBehaviour
     public GameObject shot;
 
     void Update () {
-        if (Input.GetButtonDown("Fire1") && Time.time >= nextTimeToFire)
+        if ((Input.GetButtonDown("Fire1") || Input.GetAxisRaw("Fire1") > 0)&& Time.time >= nextTimeToFire)
         {
             nextTimeToFire = Time.time + 1f/fireRate;
             Shoot();
