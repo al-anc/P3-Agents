@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector3 velocity;
     private bool isGrounded;
+    
 
     // Update is called once per frame
     void Update()

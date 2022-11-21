@@ -12,12 +12,16 @@ public class GunController : MonoBehaviour
     public Camera fpsCam;
 
     private float nextTimeToFire = 0f;
+    public GameObject shot;
 
     void Update () {
         if (Input.GetButtonDown("Fire1") && Time.time >= nextTimeToFire)
         {
             nextTimeToFire = Time.time + 1f/fireRate;
             Shoot();
+            Instantiate(shot);
+            
+        
         }
     }
 
@@ -27,6 +31,7 @@ public class GunController : MonoBehaviour
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {
             Debug.Log(hit.transform.name);
+            
 
             EnemyHealth target = hit.transform.GetComponent<EnemyHealth>();
             
@@ -35,5 +40,7 @@ public class GunController : MonoBehaviour
                 target.TakeDamage(damage);
             }
         }
+        
     }
+    
 }
