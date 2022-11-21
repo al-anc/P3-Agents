@@ -47,9 +47,13 @@ public class EnemyAi : MonoBehaviour
         {
             Patrol();
         }
-        if (dist <= DetectionDist)
+        if (dist <= DetectionDist && dist > attackDist)
         {
             Activate();
+        }
+        else if (dist < DetectionDist && dist <= attackDist)
+        {
+            shoot();
         }
     }
         private bool atDestination;
