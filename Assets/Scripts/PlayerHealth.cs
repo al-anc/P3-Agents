@@ -29,4 +29,11 @@ public class PlayerHealth : MonoBehaviour
     {
         pM.Loss();
     }
+    public void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.tag == "EnemyBullet")
+        {
+            TakeDamage(1);
+        }
+    }
 }
