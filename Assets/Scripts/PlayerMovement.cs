@@ -41,6 +41,11 @@ public class PlayerMovement : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
 
         controller.Move(velocity * Time.deltaTime);
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
     }
 
     void OnTriggerEnter(Collider col)
@@ -49,6 +54,14 @@ public class PlayerMovement : MonoBehaviour
         {
             gameOver = true;
             Time.timeScale = 0;
+            Debug.Log("You win");
         }
+    }
+
+    public void Loss()
+    {
+        gameOver = true;
+        Time.timeScale = 0;
+        Debug.Log("You lose");
     }
 }

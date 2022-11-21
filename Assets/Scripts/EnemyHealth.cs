@@ -7,8 +7,6 @@ public class EnemyHealth : MonoBehaviour
     public float health = 50f;
     public GameObject ded;
     public void TakeDamage (float amount)
-
-
     {
         health -= amount;
         if (health <= 0f)
