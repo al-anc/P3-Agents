@@ -23,7 +23,9 @@ public class EnemyBullet : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-        Destroy(gameObject);
+            other.gameObject.GetComponent<PlayerHealth>().TakeDamage(1f);
+        Destroy(gameObject, 0.5f);
         }
+        else { Destroy(gameObject); }
     }
 }

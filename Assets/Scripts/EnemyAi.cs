@@ -17,6 +17,8 @@ public class EnemyAi : MonoBehaviour
     public GameObject fireslot;
     private bool attack;
     public float projectileSpeed;
+    public float DetectionDist;
+    public float attackDist;
 
     public Transform target;
     private UnityEngine.AI.NavMeshAgent ai;
@@ -39,11 +41,15 @@ public class EnemyAi : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        dist = Vector3.Distance(Player.transform.position, transform.position);
-        Debug.Log(dist);
+        float dist = Vector3.Distance(Player.transform.position, transform.position);
+        //Debug.Log(dist);
         if (!spottedPlayer)
         {
             Patrol();
+        }
+        if (dist <= DetectionDist)
+        {
+            Activate();
         }
     }
         private bool atDestination;
@@ -76,7 +82,7 @@ public class EnemyAi : MonoBehaviour
         spottedPlayer = true;
         target = Player.transform;
         UpdateDestination(target.position);
-        if (dist <= 5 && attack == false)
+        if (dist <= attackDist && attack == false)
         {
             attack = true;
             ai.speed = 0;
