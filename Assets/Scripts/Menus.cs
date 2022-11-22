@@ -63,6 +63,7 @@ public class Menus : MonoBehaviour
         }
         else
         {
+            OpenSettings();
             PauseMenu.SetActive(false);
             Pause = false;
             Time.timeScale = 1;

@@ -19,6 +19,12 @@ public class EnemyAi : MonoBehaviour
     public float projectileSpeed;
     public float DetectionDist;
     public float attackDist;
+    private float orriginalAttackDist;
+    public LayerMask layerMask;
+    // public LayerMask PlayerLayerMask;
+    private Vector3 PlayerPos;
+    public bool SeesPlayer;
+    public bool canFollow;
 
     public Transform target;
     private UnityEngine.AI.NavMeshAgent ai;
@@ -26,6 +32,8 @@ public class EnemyAi : MonoBehaviour
     void Start()
     {
         ai = GetComponent<UnityEngine.AI.NavMeshAgent>();
+
+        orriginalAttackDist = attackDist;
 
         if(target == null)
         {
@@ -42,18 +50,75 @@ public class EnemyAi : MonoBehaviour
     void Update()
     {
         float dist = Vector3.Distance(Player.transform.position, transform.position);
+        PlayerPos.x = Player.transform.position.x;
+        PlayerPos.z = Player.transform.position.z;
+        PlayerPos.y = transform.position.y;
         //Debug.Log(dist);
         if (!spottedPlayer)
         {
             Patrol();
         }
+        if (spottedPlayer == true)
+        {
+            transform.LookAt(PlayerPos);
+        }
+        if (spottedPlayer == false)
+        {
+            attackDist = orriginalAttackDist;
+        }
         if (dist <= DetectionDist && dist > attackDist)
         {
             Activate();
         }
-        else if (dist < DetectionDist && dist <= attackDist)
+        if (dist < DetectionDist && dist <= attackDist && attack == false)
         {
-            shoot();
+            attack = true;
+            ai.speed = 0;
+            Invoke(nameof(shoot), 1f);
+        }
+        // if (dist > orriginalAttackDist)
+        // {
+        //     spottedPlayer = false;
+        // }
+        RaycastHit hit;
+        // Does the ray intersect any objects excluding the player layer
+        if (spottedPlayer == true)
+        {
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, layerMask))
+        {
+            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
+            // Debug.Log("Hit Wall");
+            if (hit.transform.tag == "Player")
+            {
+                SeesPlayer = true;
+            }
+            else
+            {
+                SeesPlayer = false;
+            }
+        }
+        else
+        {
+            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 1000, Color.white);
+            // Debug.Log("Hit Player");
+        }
+        }
+
+        if (canFollow == true)
+        {
+        if (spottedPlayer == true && SeesPlayer == false)
+        {
+            Invoke(nameof(Reposistion), 0f);
+        }
+        else if (spottedPlayer == true && SeesPlayer == true)
+        {
+            attackDist = attackDist;
+        }
+        }
+
+        if (attackDist <= 5f)
+        {
+            attackDist = 5f;
         }
     }
         private bool atDestination;
@@ -83,21 +148,21 @@ public class EnemyAi : MonoBehaviour
     }
     public void Activate()
     {
+        ai.speed = Speed;
         spottedPlayer = true;
         target = Player.transform;
         UpdateDestination(target.position);
-        if (dist <= attackDist && attack == false)
-        {
-            attack = true;
-            ai.speed = 0;
-            Invoke(nameof(shoot), 1f);
-        }
         // Invoke(nameof(ResetAttack), 1f);
     }
 
     public virtual void ResetAttack()
     {
         attack = false;
+        if (dist > attackDist)
+        {
+            // target = Player.transform;
+            // UpdateDestination(target.transform);
+        }
     }
     public void shoot()
     {
@@ -106,5 +171,17 @@ public class EnemyAi : MonoBehaviour
         // GameObject.Instantiate(bullet, fireslot.transform.position, fireslot.transform.rotation);
         clone.velocity = (Player.transform.position - clone.position).normalized * projectileSpeed;
         Invoke(nameof(ResetAttack), 1f);
+    }
+    
+    public void Reposistion()
+    {
+        attackDist = attackDist - 1;
+        canFollow = false;
+        Invoke(nameof(ResetFollow), 1f);
+    }
+
+    public void ResetFollow()
+    {
+        canFollow = true;
     }
 }
