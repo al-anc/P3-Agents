@@ -54819,6 +54819,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 1597630589}
   PauseMenu: {fileID: 1252707488}
+  SettingsMenu: {fileID: 1232920530}
   paused: 0
 --- !u!114 &1597630596
 MonoBehaviour:
