@@ -861,6 +861,14 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 8384511018486019659, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384511018486019665, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
+      propertyPath: Speed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8384511018486019665, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
       propertyPath: Player
       value: 
@@ -870,8 +878,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8384511018486019665, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
+      propertyPath: MinDist
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384511018486019665, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
+      propertyPath: attackDist
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384511018486019665, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
       propertyPath: DetectionDist
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384511018486019665, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
+      propertyPath: layerMask.m_Bits
+      value: 503
       objectReference: {fileID: 0}
     - target: {fileID: 8384511018486019665, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
       propertyPath: PatrolPoints.Array.size
@@ -923,6 +943,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8384511018486019670, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384511018486019671, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
+      propertyPath: m_CollisionDetection
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8384511019815593423, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
@@ -47002,6 +47026,14 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 8384511018486019659, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384511018486019665, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
+      propertyPath: Speed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8384511018486019665, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
       propertyPath: Player
       value: 
@@ -47011,8 +47043,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8384511018486019665, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
+      propertyPath: MinDist
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384511018486019665, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
+      propertyPath: attackDist
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384511018486019665, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
       propertyPath: DetectionDist
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384511018486019665, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
+      propertyPath: layerMask.m_Bits
+      value: 503
       objectReference: {fileID: 0}
     - target: {fileID: 8384511018486019665, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
       propertyPath: PatrolPoints.Array.size
@@ -47068,6 +47112,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8384511018486019670, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384511018486019671, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
+      propertyPath: m_CollisionDetection
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8384511019815593423, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
@@ -47456,6 +47504,14 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 8384511018486019659, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384511018486019665, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
+      propertyPath: Speed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8384511018486019665, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
       propertyPath: Player
       value: 
@@ -47465,8 +47521,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8384511018486019665, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
+      propertyPath: MinDist
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384511018486019665, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
+      propertyPath: attackDist
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384511018486019665, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
       propertyPath: DetectionDist
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384511018486019665, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
+      propertyPath: layerMask.m_Bits
+      value: 503
       objectReference: {fileID: 0}
     - target: {fileID: 8384511018486019665, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
       propertyPath: PatrolPoints.Array.size
@@ -47522,6 +47590,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8384511018486019670, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384511018486019671, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
+      propertyPath: m_CollisionDetection
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8384511019815593423, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
@@ -53365,6 +53437,14 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 8384511018486019659, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384511018486019665, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
+      propertyPath: Speed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8384511018486019665, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
       propertyPath: Player
       value: 
@@ -53374,8 +53454,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8384511018486019665, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
+      propertyPath: MinDist
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384511018486019665, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
+      propertyPath: attackDist
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384511018486019665, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
       propertyPath: DetectionDist
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384511018486019665, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
+      propertyPath: layerMask.m_Bits
+      value: 503
       objectReference: {fileID: 0}
     - target: {fileID: 8384511018486019665, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
       propertyPath: PatrolPoints.Array.size
@@ -53431,6 +53523,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8384511018486019670, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384511018486019671, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
+      propertyPath: m_CollisionDetection
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8384511019815593423, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
@@ -54103,7 +54199,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1332804331}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20.7, y: 1.47, z: 17.6}
+  m_LocalPosition: {x: 19.81, y: 1.47, z: 16.06}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -54141,6 +54237,14 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 8384511018486019659, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384511018486019665, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
+      propertyPath: Speed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8384511018486019665, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
       propertyPath: Player
       value: 
@@ -54150,8 +54254,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8384511018486019665, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
+      propertyPath: MinDist
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384511018486019665, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
+      propertyPath: attackDist
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384511018486019665, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
       propertyPath: DetectionDist
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384511018486019665, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
+      propertyPath: layerMask.m_Bits
+      value: 503
       objectReference: {fileID: 0}
     - target: {fileID: 8384511018486019665, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
       propertyPath: PatrolPoints.Array.size
@@ -54207,6 +54323,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8384511018486019670, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384511018486019671, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
+      propertyPath: m_CollisionDetection
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8384511019815593423, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
@@ -54545,6 +54665,14 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 8384511018486019659, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384511018486019665, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
+      propertyPath: Speed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8384511018486019665, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
       propertyPath: Player
       value: 
@@ -54554,8 +54682,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8384511018486019665, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
+      propertyPath: MinDist
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384511018486019665, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
+      propertyPath: attackDist
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384511018486019665, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
       propertyPath: DetectionDist
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384511018486019665, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
+      propertyPath: layerMask.m_Bits
+      value: 503
       objectReference: {fileID: 0}
     - target: {fileID: 8384511018486019665, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
       propertyPath: PatrolPoints.Array.size
@@ -54609,6 +54749,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8384511018486019671, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8384511019815593423, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
       propertyPath: m_Layer
       value: 7
@@ -54637,7 +54781,7 @@ GameObject:
   - component: {fileID: 1597630594}
   m_Layer: 0
   m_Name: FPPlayer
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -54653,7 +54797,7 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 3.8
+  m_Height: 3.63
   m_Radius: 0.6
   m_SlopeLimit: 45
   m_StepOffset: 0.7
@@ -55490,6 +55634,14 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 8384511018486019659, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384511018486019665, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
+      propertyPath: Speed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8384511018486019665, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
       propertyPath: Player
       value: 
@@ -55499,8 +55651,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8384511018486019665, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
+      propertyPath: MinDist
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384511018486019665, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
+      propertyPath: attackDist
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384511018486019665, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
       propertyPath: DetectionDist
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384511018486019665, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
+      propertyPath: layerMask.m_Bits
+      value: 503
       objectReference: {fileID: 0}
     - target: {fileID: 8384511018486019665, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
       propertyPath: PatrolPoints.Array.size
@@ -55556,6 +55720,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8384511018486019670, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384511018486019671, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
+      propertyPath: m_CollisionDetection
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8384511019815593423, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
@@ -56793,6 +56961,14 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 8384511018486019659, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384511018486019665, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
+      propertyPath: Speed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8384511018486019665, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
       propertyPath: Player
       value: 
@@ -56802,12 +56978,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8384511018486019665, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
-      propertyPath: attackDist
+      propertyPath: MinDist
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384511018486019665, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
+      propertyPath: attackDist
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8384511018486019665, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
       propertyPath: DetectionDist
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384511018486019665, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
+      propertyPath: layerMask.m_Bits
+      value: 503
       objectReference: {fileID: 0}
     - target: {fileID: 8384511018486019665, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
       propertyPath: PatrolPoints.Array.size
@@ -56867,6 +57051,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8384511018486019670, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384511018486019671, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}
+      propertyPath: m_CollisionDetection
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8384511019815593423, guid: 5d797982e1045f74fb1e9a26bee0af34, type: 3}

@@ -25,6 +25,7 @@ public class EnemyAi : MonoBehaviour
     private Vector3 PlayerPos;
     public bool SeesPlayer;
     public bool canFollow;
+    public float MinDist;
 
     public Transform target;
     private UnityEngine.AI.NavMeshAgent ai;
@@ -76,6 +77,10 @@ public class EnemyAi : MonoBehaviour
             ai.speed = 0;
             Invoke(nameof(shoot), 1f);
         }
+        if (dist < MinDist)
+        {
+            ai.speed = 0;
+        }
         // if (dist > orriginalAttackDist)
         // {
         //     spottedPlayer = false;
@@ -114,11 +119,6 @@ public class EnemyAi : MonoBehaviour
         {
             attackDist = attackDist;
         }
-        }
-
-        if (attackDist <= 5f)
-        {
-            attackDist = 5f;
         }
     }
         private bool atDestination;
