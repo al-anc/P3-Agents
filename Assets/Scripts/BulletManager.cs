@@ -15,7 +15,7 @@ public class BulletManager : MonoBehaviour
 
     private void OnDisable()
     {
-        GunController.OnBulletFired += DrawBullets;
+        GunController.OnBulletFired -= DrawBullets;
     }
 
     private void Start()
@@ -26,7 +26,7 @@ public class BulletManager : MonoBehaviour
     public void DrawBullets()
     {
         ClearBullets();
-        int bulletsToMake = (int)(ammo.gunAmmo);
+        int bulletsToMake = (int)(ammo.maxAmmo);
         for(int i = 0; i < bulletsToMake; i++)
         {
             CreateEmptyBullet();

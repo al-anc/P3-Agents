@@ -56,6 +56,7 @@ public class GunController : MonoBehaviour
                 if (target != null)
                 {
                     target.TakeDamage(damage);
+                    Debug.Log("EnemyHit");
                 }
             }
         }

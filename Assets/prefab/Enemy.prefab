@@ -64,6 +64,12 @@ MonoBehaviour:
   projectileSpeed: 10
   DetectionDist: 0
   attackDist: 0
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  SeesPlayer: 0
+  canFollow: 0
+  MinDist: 0
   target: {fileID: 0}
 --- !u!33 &8384511018486019669
 MeshFilter:
@@ -179,7 +185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e7e8b3ea74b9cb4a89e25c28440536c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
+  health: 10
   ded: {fileID: 7403066591815484552, guid: 968dda1c061a0f548b8cb35f2d061f2f, type: 3}
 --- !u!1 &8384511019815593423
 GameObject:
