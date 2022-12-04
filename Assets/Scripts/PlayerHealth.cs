@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public float health = 150f;
+    public float health = 20f;
 
     private PlayerMovement pM;
     

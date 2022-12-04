@@ -31,7 +31,6 @@ public class GunController : MonoBehaviour
         {
             nextTimeToFire = Time.time + 1f/fireRate;
             Shoot();
-            Instantiate(shot);
         }
         if (isReloading)
         {
@@ -41,8 +40,9 @@ public class GunController : MonoBehaviour
 
     void Shoot ()
     {
-        if (gunAmmo >= 0 && !isReloading)
+        if (gunAmmo > 0 && !isReloading)
         {
+            Instantiate(shot);
             RaycastHit hit;
             gunAmmo--;
             OnBulletFired?.Invoke();
@@ -60,7 +60,7 @@ public class GunController : MonoBehaviour
                 }
             }
         }
-        if (gunAmmo < 0)
+        else if (gunAmmo <= 0)
         {
             isReloading = true;
         }
