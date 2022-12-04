@@ -9,15 +9,17 @@ public class GunController : MonoBehaviour
     public float range = 100f;
 
     public float fireRate = 15f;
-    public float maxAmmo = 6f;
+    public float maxAmmo = 8f;
     public float gunAmmo;
+    public float reloadCooldown, maxReloadCooldown;
 
     public Camera fpsCam;
-
     private float nextTimeToFire = 0f;
     public GameObject shot;
 
     public static event Action OnBulletFired;
+
+    [SerializeField]private bool isReloading;
 
     void Start()
     {
@@ -31,26 +33,50 @@ public class GunController : MonoBehaviour
             Shoot();
             Instantiate(shot);
         }
+        if (isReloading)
+        {
+            ReloadGun();
+        }
     }
 
     void Shoot ()
     {
-        RaycastHit hit;
-        gunAmmo--;
-        OnBulletFired?.Invoke();
-        if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
+        if (gunAmmo >= 0 && !isReloading)
         {
-            Debug.Log(hit.transform.name);
+            RaycastHit hit;
+            gunAmmo--;
+            OnBulletFired?.Invoke();
+            if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
+            {
+                Debug.Log(hit.transform.name);
             
 
-            EnemyHealth target = hit.transform.GetComponent<EnemyHealth>();
+                EnemyHealth target = hit.transform.GetComponent<EnemyHealth>();
             
-            if (target != null)
-            {
-                target.TakeDamage(damage);
+                if (target != null)
+                {
+                    target.TakeDamage(damage);
+                }
             }
         }
-        
+        if (gunAmmo < 0)
+        {
+            isReloading = true;
+        }
+    }
+
+    void ReloadGun()
+    {
+        reloadCooldown = Mathf.Clamp(reloadCooldown, 0, maxReloadCooldown);
+        reloadCooldown -= Time.deltaTime;
+        if (reloadCooldown <= 0)
+        {
+            gunAmmo = maxAmmo;
+            OnBulletFired?.Invoke();
+            reloadCooldown = maxReloadCooldown;
+            isReloading = false;
+            return;
+        }
     }
     
 }
