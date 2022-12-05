@@ -107,9 +107,9 @@ MonoBehaviour:
   Player: {fileID: 0}
   bullet: {fileID: 6850456713174538582, guid: 0949d9cef9355aa4ea1261f2b064eb7c, type: 3}
   fireslot: {fileID: 5202882561369416172}
-  projectileSpeed: 10
-  DetectionDist: 10
-  attackDist: 8
+  projectileSpeed: 12
+  DetectionDist: 20
+  attackDist: 15
   layerMask:
     serializedVersion: 2
     m_Bits: 503
