@@ -6,6 +6,7 @@ public class EnemyHealth : MonoBehaviour
 {
     public float health = 50f;
     public GameObject ded;
+    public Animator anim;
     public void TakeDamage (float amount)
     {
         health -= amount;
@@ -17,7 +18,8 @@ public class EnemyHealth : MonoBehaviour
 
     void Die ()
     {
+        anim.SetTrigger("die");
         Instantiate(ded);
-        Destroy(gameObject);
+        Destroy(gameObject, 3f);
     }
 }

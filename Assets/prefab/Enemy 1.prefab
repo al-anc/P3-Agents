@@ -118,6 +118,7 @@ MonoBehaviour:
   MinDist: 0
   anim: {fileID: 8558996005915832351}
   rb: {fileID: 5202882561952346740}
+  health: {fileID: 5202882561952346737}
   target: {fileID: 0}
 --- !u!33 &5202882561952346742
 MeshFilter:
@@ -235,6 +236,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 10
   ded: {fileID: 7403066591815484552, guid: 968dda1c061a0f548b8cb35f2d061f2f, type: 3}
+  anim: {fileID: 8558996005915832351}
 --- !u!1001 &2859007502108396942
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -272,7 +274,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f5c5644a8b6a54a458a9d969094257a1, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9702957
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f5c5644a8b6a54a458a9d969094257a1, type: 3}
       propertyPath: m_LocalRotation.x
@@ -280,7 +282,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f5c5644a8b6a54a458a9d969094257a1, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.24192187
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f5c5644a8b6a54a458a9d969094257a1, type: 3}
       propertyPath: m_LocalRotation.z
@@ -292,7 +294,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f5c5644a8b6a54a458a9d969094257a1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 28
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f5c5644a8b6a54a458a9d969094257a1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z

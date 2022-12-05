@@ -28,6 +28,7 @@ public class EnemyAi : MonoBehaviour
     public float MinDist;
     public Animator anim;
     public Rigidbody rb;
+    public EnemyHealth health;
 
     public Transform target;
     private UnityEngine.AI.NavMeshAgent ai;
@@ -60,6 +61,13 @@ public class EnemyAi : MonoBehaviour
         if (!spottedPlayer)
         {
             Patrol();
+        }
+        if (health.health <= 0)
+        {
+            attackDist = 0;
+            DetectionDist = 0;
+            ai.speed = 0;
+            attack = true;
         }
         if (ai.speed > 0 )
         {
