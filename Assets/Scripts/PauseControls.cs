@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 
 public class PauseControls : MonoBehaviour
 {
-    public GameObject  Player, PauseMenu, SettingsMenu, pauseMenuFirstButton;
+    public GameObject  Player, PauseMenu, pauseMenuFirstButton;
     public bool paused;
     
     void Update()
@@ -22,7 +22,6 @@ public class PauseControls : MonoBehaviour
         }
         else if (Input.GetButtonDown("Pause") && paused == true)
         {
-            SettingsMenu.SetActive(false);
             PauseMenu.SetActive(false);
             paused = false;
             Time.timeScale = 1;

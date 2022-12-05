@@ -8,12 +8,18 @@ public class Menus : MonoBehaviour
 {
     [SerializeField] bool settings;
     [SerializeField] bool Pause;
-    [SerializeField] GameObject SettingsMenu, settingsFirstButton, settingsClosedButton;
-    [SerializeField] GameObject PauseMenu;
+    [SerializeField] GameObject PauseMenu, HelpMenu, HelpFirstButton, HelpCloseButton;
     public void PlayGame()
     {
         Debug.Log("Game Started!");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        Time.timeScale = 1;
+    }
+
+    public void MainMenu()
+    {
+        Debug.Log("Main menu loaded!");
+        SceneManager.LoadScene("MainMenu");
         Time.timeScale = 1;
     }
 
@@ -31,20 +37,20 @@ public class Menus : MonoBehaviour
         Debug.Log("Quit!");
     }
 
-    public void OpenSettings()
+    public void OpenHelp()
     {
         PauseMenu.SetActive(false);
-        SettingsMenu.SetActive(true);
+        HelpMenu.SetActive(true);
         EventSystem.current.SetSelectedGameObject(null);
-        EventSystem.current.SetSelectedGameObject(settingsFirstButton);
+        EventSystem.current.SetSelectedGameObject(HelpFirstButton);
     }
 
-    public void CloseSettings()
+    public void CloseHelp()
     {
-        SettingsMenu.SetActive(false);
+        HelpMenu.SetActive(false);
         PauseMenu.SetActive(true);
         EventSystem.current.SetSelectedGameObject(null);
-        EventSystem.current.SetSelectedGameObject(settingsClosedButton);
+        EventSystem.current.SetSelectedGameObject(HelpCloseButton);
     }
 
     public void RetryLevel()
@@ -63,7 +69,7 @@ public class Menus : MonoBehaviour
         }
         else
         {
-            OpenSettings();
+            //OpenSettings();
             PauseMenu.SetActive(false);
             Pause = false;
             Time.timeScale = 1;

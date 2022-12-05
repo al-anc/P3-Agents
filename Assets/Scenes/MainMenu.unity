@@ -1672,7 +1672,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1720792571}
         m_TargetAssemblyTypeName: Menus, Assembly-CSharp
-        m_MethodName: OpenSettings
+        m_MethodName: OpenHelp
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2820,10 +2820,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   settings: 0
   Pause: 0
-  SettingsMenu: {fileID: 1599025380}
-  settingsFirstButton: {fileID: 488173429}
-  settingsClosedButton: {fileID: 737423304}
   PauseMenu: {fileID: 21582483}
+  HelpMenu: {fileID: 1599025380}
+  HelpFirstButton: {fileID: 488173429}
+  HelpCloseButton: {fileID: 737423304}
 --- !u!1 &1736347420
 GameObject:
   m_ObjectHideFlags: 0
