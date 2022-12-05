@@ -16,6 +16,8 @@ public class GunController : MonoBehaviour
     public Camera fpsCam;
     private float nextTimeToFire = 0f;
     public GameObject shot;
+    public Animator anim;
+    public GameObject reload;
 
     public static event Action OnBulletFired;
 
@@ -59,15 +61,22 @@ public class GunController : MonoBehaviour
                     Debug.Log("EnemyHit");
                 }
             }
+            anim.SetTrigger("shoot");
+            Invoke("resetanim", 0.5f);
+            
         }
         else if (gunAmmo <= 0)
         {
             isReloading = true;
+            Instantiate(reload);
+            anim.SetTrigger("reload");
+            Invoke("resetanim1", 0.5f);
         }
     }
 
     void ReloadGun()
     {
+        
         reloadCooldown = Mathf.Clamp(reloadCooldown, 0, maxReloadCooldown);
         reloadCooldown -= Time.deltaTime;
         if (reloadCooldown <= 0)
@@ -78,6 +87,16 @@ public class GunController : MonoBehaviour
             isReloading = false;
             return;
         }
+        
+    }
+
+    void resetanim()
+    {
+        anim.SetBool("shoot", false);
+    }
+    void resetanim1()
+    {
+        anim.SetBool("reload", false);
     }
     
 }
