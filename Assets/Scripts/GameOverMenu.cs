@@ -23,11 +23,11 @@ public class GameOverMenu : MonoBehaviour
         {
             if (Player.GetComponent<PlayerMovement>().victory == false)
             {
-                menuText.text = "Game Over! Retry the lvl?";
+                menuText.text = "Retry the level?";
             }
             if (Player.GetComponent<PlayerMovement>().victory == true)
             {
-                menuText.text = "Game Over! Payload Retrieved!.";
+                menuText.text = "Good Work, Payload Retrieved!.";
             }
         }
     }
