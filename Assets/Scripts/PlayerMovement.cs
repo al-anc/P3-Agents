@@ -20,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
     public TextMeshProUGUI timerText;
     private Vector3 velocity;
     private bool isGrounded;
+    public GameObject Bomb;
 
     public bool gameOver, victory;
 
@@ -53,6 +54,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (countownStarted)
         {
+            Bomb.SetActive(true);
             deliveryTime -= Time.deltaTime;
             UpdateCountdown();
         }
