@@ -26,6 +26,8 @@ public class EnemyAi : MonoBehaviour
     public bool SeesPlayer;
     public bool canFollow;
     public float MinDist;
+    public Animator anim;
+    public Rigidbody rb;
 
     public Transform target;
     private UnityEngine.AI.NavMeshAgent ai;
@@ -59,6 +61,12 @@ public class EnemyAi : MonoBehaviour
         {
             Patrol();
         }
+        if (ai.speed > 0 )
+        {
+            anim.SetFloat("runSpeed", 1f);
+        }
+        else {anim.SetFloat("runSpeed", 0f);}
+
         if (spottedPlayer == true)
         {
             transform.LookAt(PlayerPos);
@@ -131,6 +139,7 @@ public class EnemyAi : MonoBehaviour
             if (patrolNum < PatrolPoints.Count - 1)
             {
                 patrolNum++;
+                anim.SetTrigger("Turn");
             }
             //if the player is at the last point go to the first one
             else
@@ -166,6 +175,7 @@ public class EnemyAi : MonoBehaviour
     }
     public void shoot()
     {
+        anim.SetTrigger("shoot");
         Rigidbody clone;
         clone = Instantiate(bullet, fireslot.transform.position, Player.transform.rotation);
         // GameObject.Instantiate(bullet, fireslot.transform.position, fireslot.transform.rotation);

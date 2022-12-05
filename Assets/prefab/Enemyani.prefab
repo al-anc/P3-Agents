@@ -52,21 +52,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d1d75e7730e2174ba912ac1efd8aa91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PatrolPoints: []
+  PatrolPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   waypointFollowing: 0
   waypointDistance: 3
-  Speed: 15
+  Speed: 8
   patrolNum: 0
   spottedPlayer: 0
-  Player: {fileID: 0}
+  Player: {fileID: 2940850735797713364, guid: e27588f53ff03f64faced6a89fcd820d, type: 3}
   bullet: {fileID: 6850456713174538582, guid: 0949d9cef9355aa4ea1261f2b064eb7c, type: 3}
   fireslot: {fileID: 8384511019815593423}
   projectileSpeed: 10
-  DetectionDist: 0
-  attackDist: 0
+  DetectionDist: 10
+  attackDist: 8
   layerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 503
   SeesPlayer: 0
   canFollow: 0
   MinDist: 0
