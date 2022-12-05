@@ -21,6 +21,8 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 velocity;
     private bool isGrounded;
     public GameObject Bomb;
+    public GameObject ost1;
+    public GameObject ost2;
 
     public bool gameOver, victory;
 
@@ -96,6 +98,8 @@ public class PlayerMovement : MonoBehaviour
             deliveryText.text = "Get to the Exit!";
             Invoke(nameof(TextBlanks), 3); 
             col.gameObject.SetActive(false);
+            Destroy(ost1);
+            Instantiate(ost2);
         }
     }
 

@@ -107,9 +107,9 @@ MonoBehaviour:
   Player: {fileID: 0}
   bullet: {fileID: 6850456713174538582, guid: 0949d9cef9355aa4ea1261f2b064eb7c, type: 3}
   fireslot: {fileID: 5202882561369416172}
-  projectileSpeed: 12
-  DetectionDist: 20
-  attackDist: 15
+  projectileSpeed: 30
+  DetectionDist: 35
+  attackDist: 20
   layerMask:
     serializedVersion: 2
     m_Bits: 503
@@ -298,6 +298,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f5c5644a8b6a54a458a9d969094257a1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -1155148998700280648, guid: f5c5644a8b6a54a458a9d969094257a1, type: 3}
+      propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: f5c5644a8b6a54a458a9d969094257a1, type: 3}
