@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro; 
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -12,7 +14,10 @@ public class PlayerMovement : MonoBehaviour
     public Transform groundCheck;
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
-
+    public float deliveryTime;
+    private bool countownStarted;
+    public TextMeshProUGUI deliveryText;
+    public TextMeshProUGUI timerText;
     private Vector3 velocity;
     private bool isGrounded;
 
@@ -23,6 +28,8 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         Time.timeScale = 1;
+        timerText.text = "";
+        deliveryText.text = "";
     }
     
     // Update is called once per frame
@@ -44,6 +51,19 @@ public class PlayerMovement : MonoBehaviour
 
         velocity.y += gravity * Time.deltaTime;
 
+        if (countownStarted)
+        {
+            deliveryTime -= Time.deltaTime;
+            UpdateCountdown();
+        }
+
+        if (deliveryTime <= 0)
+        {
+            countownStarted = false;
+            UpdateCountdown();
+            Loss();
+        }
+
         controller.Move(velocity * Time.deltaTime);
 
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -52,15 +72,28 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+        void UpdateCountdown()
+    {
+        timerText.text = ($"{deliveryTime.ToString("F0")}");
+    }
+
+
     void OnTriggerEnter(Collider col)
     {
-        if (col.gameObject.tag == ("Victory"))
+        if (col.gameObject.tag == ("Victory") && countownStarted == true)
         {
             gameOver = true;
             victory = true;
             GOverMenu.SetActive(true);
             Time.timeScale = 0;
             Debug.Log("You win");
+        }
+        if (col.gameObject.tag == ("BriefCase"))
+        {
+            countownStarted = true;
+            deliveryText.text = "Get to the Exit!";
+            Invoke(nameof(TextBlanks), 3); 
+            col.gameObject.SetActive(false);
         }
     }
 
@@ -71,5 +104,9 @@ public class PlayerMovement : MonoBehaviour
         GOverMenu.SetActive(true);
         Time.timeScale = 0;
         Debug.Log("You lose");
+    }
+    public void TextBlanks()
+    {
+        deliveryText.text = "";
     }
 }
