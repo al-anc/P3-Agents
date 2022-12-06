@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public float health = 20f;
+    public float health = 10f;
     public float maxHealth;
     [SerializeField] public GameObject Health100, Health75, Health50, Health25;
 
@@ -69,6 +69,16 @@ public class PlayerHealth : MonoBehaviour
         if (other.gameObject.tag == "EnemyBullet")
         {
             TakeDamage(1);
+        }
+    }
+
+    public void Restore(float amount)
+    {
+        health = Mathf.Clamp(health, -0.00001f, maxHealth);
+        health += amount;
+        if (health > maxHealth)
+        {
+            health = maxHealth;
         }
     }
 }

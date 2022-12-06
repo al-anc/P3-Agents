@@ -17,7 +17,7 @@ public class PauseControls : MonoBehaviour
             PauseMenu.SetActive(true);
             paused = true;
             Time.timeScale = 0;
-            Cursor.lockState = CursorLockMode.None;
+            Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
         }
         else if (Input.GetButtonDown("Pause") && paused == true)

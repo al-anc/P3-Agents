@@ -58,7 +58,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 6850456713174538582}
-  shootSpeed: 10
 --- !u!23 &6850456713174538577
 MeshRenderer:
   m_ObjectHideFlags: 0
